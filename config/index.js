@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser");
 const favicon = require("serve-favicon");
 const path = require("path");
 
-module.exports = (app) => {
+module.exports = app => {
   app.use(logger("dev"));
 
   app.use(express.json());
