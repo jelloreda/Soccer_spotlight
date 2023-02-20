@@ -40,12 +40,15 @@
                      Profile
                   </a>
                   <ul class="dropdown-menu">
+                     {{#unless currenUser}}
                      <li class="nav-item">
                         <a class="nav-link" href="/signup">Sign in</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="/login">Log in</a>
                      </li>
+                     {{/unless}}
+                     {{!-- {{if }} --}}
                      <li class="nav-item">
                         <a class="nav-link" href="/user/profile">Profile</a>
                      </li>
