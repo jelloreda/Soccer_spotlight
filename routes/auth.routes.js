@@ -37,6 +37,8 @@ router.post('/signup', isLoggedOut, uploaderMiddleware.single('avatar'), (req, r
         .catch(err => console.log(err))
 });
 
+
+
 //Log in form handler
 
 router.get('/login', isLoggedOut, (req, res, next) => {

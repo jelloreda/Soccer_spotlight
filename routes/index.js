@@ -16,7 +16,7 @@ module.exports = app => {
 
     //Fixture routes
     const fixtureRoutes = require("./fixture.routes")
-    app.use("/", fixtureRoutes)
+    app.use("/match", fixtureRoutes)
 
 
     //Teams routes
