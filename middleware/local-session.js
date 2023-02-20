@@ -1,8 +1,8 @@
 const localSession = (req, res, next) => {
     if (req.session.currentUser) {
-        res.local.currentUser = req.session.currentUser
+        res.locals.currentUser = req.session.currentUser
     } else {
-        res.local.currentUser = null
+        res.locals.currentUser = null
     }
     next()
 }
