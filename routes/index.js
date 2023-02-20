@@ -1,34 +1,36 @@
 module.exports = app => {
 
     //Index routes
-    const indexRoutes = require("./index.routes");
-    app.use("/", indexRoutes);
+    const indexRoutes = require("./index.routes")
+    app.use("/", indexRoutes)
 
     //Auth routes
-    const authRoutes = require("./auth.routes");
-    app.use("/", authRoutes);
+    const authRoutes = require("./auth.routes")
+    app.use("/", authRoutes)
+
 
     //User routes
-    const userRoutes = require("./user.routes");
-    app.use("/user", userRoutes);
+    const userRoutes = require("./user.routes")
+    app.use("/user", userRoutes)
+
 
     //Fixture routes
-    const fixtureRoutes = require("./fixture.routes");
+    const fixtureRoutes = require("./fixture.routes")
     app.use("/", fixtureRoutes)
 
 
     //Teams routes
-    const teamRoutes = require("./team.routes.js");
+    const teamRoutes = require("./team.routes.js")
     app.use("/", teamRoutes)
 
 
     //League routes
-    const leagueRoutes = require("./league.routes");
+    const leagueRoutes = require("./league.routes")
     app.use("/", leagueRoutes)
 
 
     //Player routes
-    const playerRoutes = require("./player.routes.js");
+    const playerRoutes = require("./player.routes.js")
     app.use("/", playerRoutes)
 }
 
