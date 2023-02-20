@@ -23,7 +23,7 @@
          <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                <li class="nav-item">
-                  <a class="nav-link" href="/fixture">Fixtures</a>
+                  <a class="nav-link" href="/match">Fixtures</a>
                </li>
                <li class="nav-item">
                   <a class="nav-link" href="/teams">Teams</a>
@@ -43,21 +43,22 @@
                      Profile
                   </a>
                   <ul class="dropdown-menu">
-                     {{#unless currentUser}}
+                     {{!-- {{#unless currentUserId}} --}}
                      <li class="nav-item">
                         <a class="nav-link" href="/signup">Sign in</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="/login">Log in</a>
                      </li>
-                     {{/unless}}
-                     {{!-- {{if }} --}}
+                     {{!-- {{/unless}} --}}
+                     {{!-- {{#if currentUserId}} --}}
                      <li class="nav-item">
                         <a class="nav-link" href="/user/profile">Profile</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="/logout">Log out</a>
                      </li>
+                     {{!-- {{/if}} --}}
                   </ul>
                </li>
             </ul>

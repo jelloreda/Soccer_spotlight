@@ -2,11 +2,12 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs')
 
+const { isLoggedIn, isLoggedOut } = require('../middleware/route-guards');
+const uploaderMiddleware = require('../middleware/uploader.middleware');
+
 const saltRounds = 10
 
 const User = require('../models/User.model');
-const { isLoggedIn, isLoggedOut } = require('../middleware/route-guards');
-
 
 
 //Sign in form render
@@ -15,9 +16,11 @@ router.get('/signup', isLoggedOut, (req, res, next) => {
 })
 
 //Sign in form handler
-router.post('/signup', isLoggedOut, (req, res, next) => {
+router.post('/signup', isLoggedOut, uploaderMiddleware.single('avatar'), (req, res, next) => {
 
+    console.log(req.file)
     const { email, username, userPwd, birthday } = req.body
+    const { url: avatar } = req.file
 
     if (username.length === 0 || email.length === 0 || userPwd.length === 0) {
         res.render('auth/user-signup', { errorMessage: 'Complete all the require fields' })
@@ -29,7 +32,7 @@ router.post('/signup', isLoggedOut, (req, res, next) => {
     bcrypt
         .genSalt(saltRounds)
         .then(salt => bcrypt.hash(userPwd, salt))
-        .then(pwdHash => User.create({ username, email, password: pwdHash, birthday }))
+        .then(pwdHash => User.create({ username, email, password: pwdHash, birthday, avatar }))
         .then(res.redirect('/'))
         .catch(err => console.log(err))
 });

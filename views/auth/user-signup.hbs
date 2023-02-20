@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
 
-            <form action="/signup" method="post">
+            <form action="/signup" method="post" enctype="multipart/form-data">
                 <div class="row justify-content-between">
 
                     <div class="col-12 mb-2">
@@ -24,10 +24,10 @@
                         <label for="birthday" class="form-label">Birthday</label>
                         <input type="date" class="form-control" id="birthday" name="birthday">
                     </div>
-                    {{!-- <div class="col-6 mb-2">
+                    <div class="col-6 mb-2">
                         <label for="avatar" class="form-label">Profile picture</label>
-                        <input type="image" name="avatar" id="avatar" name="avatar">
-                    </div> --}}
+                        <input type="file" class="form-control" id="avatar" name="avatar">
+                    </div>
                     {{#if errorMessage}}
                     <p id="errorMessage" class="mt-2">{{errorMessage}}</p>
                     {{/if}}

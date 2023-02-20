@@ -12,7 +12,7 @@ app.locals.appTitle = "Soccer Spotlight ⚽️"
 
 require('./routes/')(app)
 
-const { localSession } = require('./middleware/local-session')
+const localSession = require('./middleware/local-session')(app)
 app.use(localSession)
 
 require("./error-handling")(app);
