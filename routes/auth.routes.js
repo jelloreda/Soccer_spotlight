@@ -11,7 +11,7 @@ const { isLoggedIn, isLoggedOut } = require('../middleware/route-guards');
 
 //Sign in form render
 router.get('/signup', isLoggedOut, (req, res, next) => {
-    res.render('auth/user-signup');
+    res.render('auth/user-signup')
 })
 
 //Sign in form handler
